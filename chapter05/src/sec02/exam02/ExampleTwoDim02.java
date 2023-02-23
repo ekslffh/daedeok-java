@@ -33,9 +33,8 @@ public class ExampleTwoDim02 {
 		}
 		System.out.println();
 		
-		
-		
 		// 등수순으로 출력하시오.....
+		// [방법1]: 순위대로 출력만 하기
 		for (int rank = 1; rank <= stdName.length; rank++) {
 			for (int i = 0; i < score.length; i++) {
 				if (score[i][5] == rank) {
@@ -47,22 +46,29 @@ public class ExampleTwoDim02 {
 				}
 			}
 		}
+		System.out.println();
+		s.swap(score, stdName);
+		// [방법2]: 실제 순위별로 정렬시킨후 출력하기
 //		for (int i = 0; i < score.length - 1; i++) {
 //			for (int j = 0; j < score.length - i - 1; j++) {
 //				if (score[j][5] > score[j + 1][5]) {
 //					int[] temp = score[j];
 //					score[j] = score[j + 1];
 //					score[j + 1] = temp;
+//					// 이름도 변경
+//					String tempStr = stdName[j];
+//					stdName[j] = stdName[j + 1];
+//					stdName[j + 1] = tempStr;
 //				}
 //			}
 //		}
-//		for (int i = 0; i < score.length; i++) {
-//			System.out.print(stdName[i] + "\t");
-//			for (int j = 0; j < score[i].length; j++) {
-//				System.out.print(score[i][j] + "\t");
-//			}
-//			System.out.println();
-//		}
+		for (int i = 0; i < score.length; i++) {
+			System.out.print(stdName[i] + "\t");
+			for (int j = 0; j < score[i].length; j++) {
+				System.out.print(score[i][j] + "\t");
+			}
+			System.out.println();
+		}
 		
 	}
 }
@@ -87,8 +93,21 @@ class ExamScore {
 		}
 	}
 	
-	public void swap(int[][] score) { // 행 위치 바꿈
-		
+	public void swap(int[][] score, String[] stdName) { // 행 위치 바꿈
+		for (int i = 0; i < score.length - 1; i++) {
+			for (int j = 0; j < score.length - i - 1; j++) {
+				if (score[j][3] < score[j + 1][3]) {
+					for (int k = 0; k < score[i].length; k++) {
+						int t = score[j][k];
+						score[j][k] = score[j + 1][k];
+						score[j + 1][k] = t;
+					}
+					String tempStr = stdName[j];
+					stdName[j] = stdName[j + 1];
+					stdName[j + 1] = tempStr;
+				}
+			}
+		}
 	}
 	
 }
