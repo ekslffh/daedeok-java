@@ -1,23 +1,49 @@
 package sec06.exam01;
 
+import sec04.exam02.Account;
+
 public class BankExample {
 	public static void main(String[] args) {
-		BankAccount ba1 = new BankAccount();
-		BankAccount ba2 = new BankAccount();
-		BankAccount ba3 = new BankAccount();
+		Bank bank = new Bank();
+				
+		Customer customer1 = new Customer("È«±æµ¿");
+		customer1.addAccount(new BankAccount(10000));
+		bank.addCustomer(customer1);
+		Customer customer2 = new Customer("°­°¨Âù");
+		customer2.addAccount(new BankAccount(100));
+		bank.addCustomer(customer2);
+		Customer customer3 = new Customer("ÀÌ¼ø½Å");
+		customer3.addAccount(new BankAccount(5000));
+		bank.addCustomer(customer3);
 		
-		Customer c = new Customer("È«±æµ¿");
-		c.addAccount(ba1);
-		c.addAccount(ba2);
-		c.addAccount(ba3);
+		int max = Integer.MIN_VALUE;
+		int min = Integer.MAX_VALUE;
 		
-		Bank b1 = new Bank(c);
-		Customer[] cust = b1.getCustomers();
-		for (int i = 0; i < b1.getNumberOfCustomers(); i++) {
-			System.out.println("ÀÌ¸§ : " + cust[i].getName());
-			for (int j = 0; j < cust[i].getNumberOfAccounts(); j++) {
-				BankAccount acc = cust[i].getAccount(j);
-				System.out.println("ÀÜ¾×: " + acc.getBalance());
+		Customer maxBalanceCustomer = null;
+		Customer minBalanceCustomer = null;
+		
+		for (int i = 0; i < bank.getNumberOfCustomers(); i++) {
+			Customer customer = bank.getCustomers(i);
+			if (customer.getAccount(0).getBalance() > max) {
+				max = customer.getAccount(0).getBalance();
+				maxBalanceCustomer = customer;
+			}
+			if (customer.getAccount(0).getBalance() < min) {
+				min = customer.getAccount(0).getBalance();
+				minBalanceCustomer = customer;
+			}
+		}
+		
+		System.out.println("ÃÖ´ë±Ý¾×°èÁÂ°í°´: " + maxBalanceCustomer.getName() + ", ÀÜ¾×: " + max);
+		System.out.println("ÃÖÀú±Ý¾×°èÁÂ°í°´: " + minBalanceCustomer.getName() + ", ÀÜ¾×: " + min);
+		
+		System.out.println("¸ðµç °í°´Á¤º¸");
+		for (int i = 0; i < bank.getNumberOfCustomers(); i++) {
+			Customer customer = bank.getCustomers(i);
+			System.out.println(customer.getName());
+			for (int j = 0; j < customer.getNumberOfAccounts(); j++) {
+				BankAccount bankAccount = customer.getAccount(j);
+				System.out.println(bankAccount.getBalance());
 			}
 		}
 	}

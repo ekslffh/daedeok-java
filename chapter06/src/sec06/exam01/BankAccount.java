@@ -2,7 +2,12 @@ package sec06.exam01;
 
 public class BankAccount {
 	// 잔액(속성:변수)
-	protected int balance;
+	private int balance;
+	
+	public BankAccount(int balance) {
+		this.balance = balance;
+	}
+	
 	// 메서드 : 입금, 출금, 송금, 잔액조회
 	public int getBalance() {
 		return balance;

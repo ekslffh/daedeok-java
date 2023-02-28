@@ -14,6 +14,10 @@ public class Bank {
 		numberOfCustomers++;
 	}
 	
+	public void addCustomer(Customer customer) {
+		customers[numberOfCustomers++] = customer;
+	}
+	
 	public int getNumberOfCustomers() { // 고객의 수 반환
 		return numberOfCustomers;
 	}
