@@ -13,7 +13,7 @@ public class Tv extends Products {
 	
 	@Override
 	public String toString() {
-		return super.toString() + "\nisCaption : " + isCaption + "\nsize : " + size;
+		return "TV";
 	}
 	
 }

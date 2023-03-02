@@ -1,11 +1,11 @@
-package sec02.exam01;
-
-import java.util.Random;
-import java.util.Scanner;
-
-public class ExampleArray03 {
-
-	public static void main(String[] args) {
+//package sec02.exam01;
+//
+//import java.util.Random;
+//import java.util.Scanner;
+//
+//public class ExampleArray03 {
+//
+//	public static void main(String[] args) {
 		// 문제1] 액수를 입력받아 500,100,50,10원짜리 동전을 가장 적게 사용하는 방법을 출력하시오(if문사용하지 말것/배열사용)
 //		Scanner sc = new Scanner(System.in);
 //		System.out.print("액수입력: ");
@@ -148,10 +148,6 @@ public class ExampleArray03 {
 //		System.out.println("======새로운배열======");
 //		for (int c : copyArr) {
 //			System.out.print(c + " ");
-//		}
-		
-		
-		
-	}
-
-}
+//		}	
+//	}
+//}
