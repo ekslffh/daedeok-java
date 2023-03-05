@@ -1,7 +1,7 @@
 package sec07.question01;
 
 public abstract class Shape {
-	// ÁÂÇ¥°ª
+	// ï¿½ï¿½Ç¥ï¿½ï¿½
 	protected int x;
 	protected int y;
 	
@@ -10,6 +10,6 @@ public abstract class Shape {
 		this.y = y;
 	}
 	
-	public abstract void printInfo();
+	public abstract void print();
 	
 }

@@ -12,12 +12,7 @@ public class Circle extends PlaneFigure {
 
 	@Override
 	public void getArea() {
-		
-	}
-
-	@Override
-	public void printInfo() {
-		
+		System.out.println("원의 넓이 : " + (PI * radius * radius));
 	}
 
 }

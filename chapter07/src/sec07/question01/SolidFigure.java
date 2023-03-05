@@ -9,6 +9,10 @@ public abstract class SolidFigure extends Shape {
 		this.z = z;
 	}
 	
+	public void print() {
+		System.out.println("입체도형의 질량중심 좌표 : (" + x + ", " + y + ", " + z + ")");
+	}
+	
 	public abstract void getVolume();
 	
 }
