@@ -1,9 +1,9 @@
 package sec01.unit;
 
-interface Repairable {} // Ä¡·á¹ŞÀ» ¼ö ÀÖ´Â °´Ã¼ Ç¥½Ã
+interface Repairable {} // ì¹˜ë£Œë°”ì„ ìˆ˜ ìˆëŠ” ê°ì²´ í‘œì‹œ
 
 class Unit {
-	int hitPoint; // È­·Â: »ç¿ëÇÒ ¼ö·Ï ÁÙ¾îµç´Ù.
+	int hitPoint; // í™”ë ¥: ì‚¬ìš©í•  ìˆ˜ë¡ ì¤„ì–´ë“ ë‹¤.
 	final int MAX_HP;
 	
 	Unit(int hp) {
@@ -69,9 +69,9 @@ class SCV extends GroundUnit implements Repairable {
 		if (r instanceof Unit) {
 			Unit u = (Unit) r;
 			while (u.hitPoint != u.MAX_HP) {
-				u.hitPoint++; // ¼ö¸®³»¿ë
+				u.hitPoint++; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			}
-			System.out.println(u.toString() + "ÀÇ ¼ö¸®°¡ Á¾·áµÊ");
+			System.out.println(u.toString() + "ì˜ ìˆ˜ë¦¬ê°€ ì¢…ë£Œë¨");
 		}
 	}
 	
