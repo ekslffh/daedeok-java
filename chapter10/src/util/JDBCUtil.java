@@ -34,6 +34,7 @@ public class JDBCUtil {
 	public List<Map<String, Object>> selectList(String sql, List<Object> param) {
 		List<Map<String, Object>> result = null;
 		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(URL, USER, PASSWORD);
 			pstmt = conn.prepareStatement(sql);
 			for (int i = 0; i < param.size(); i++) {
@@ -55,6 +56,8 @@ public class JDBCUtil {
 				}
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			if (rs != null) {

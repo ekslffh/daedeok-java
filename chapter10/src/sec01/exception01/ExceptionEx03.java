@@ -2,7 +2,7 @@ package sec01.exception01;
 
 import java.io.IOException;
 
-public class Exception03 {
+public class ExceptionEx03 {
 
 	public static void main(String[] args) {
 		

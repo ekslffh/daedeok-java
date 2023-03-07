@@ -13,7 +13,7 @@ public class ExceptionEx02 {
 			System.out.print("정수 1 => ");
 			int num1 = Integer.parseInt(sc.nextLine());
 			
-			System.out.println("정수 1 => ");
+			System.out.print("정수 2 => ");
 			int num2 = Integer.parseInt(sc.nextLine());
 			
 			int res = num1 / num2;
