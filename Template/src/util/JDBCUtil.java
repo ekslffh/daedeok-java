@@ -30,8 +30,8 @@ public class JDBCUtil {
 		if (instance==null) instance=new JDBCUtil();
 		return instance;
 	}
-	
-	private final String URL="jdbc:oracle:thin:@192.168.40.49:1521:xe";
+
+	private final String URL="jdbc:oracle:thin:@localhost:1521:xe";
 	/* DBMS 접속시 사용되는 방식
 	 *   - thin, OCI
 	 *   1) thin 방식
@@ -42,7 +42,7 @@ public class JDBCUtil {
 	 *     . 각 하드웨어/소프트웨어(O/S) 별로 전용의 DB연결 프로그램을 OCI라 한다.
 	 *     . 하드웨어 또는 소프트웨어 전용의 Module을 사용하여 thin보다 속도가 빠르다.
 	 */
-	private final String USER = "SEM";
+	private final String USER = "pc20";
 	private final String PASSWORD = "java";
 	
 	private Connection conn = null;

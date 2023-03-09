@@ -3,7 +3,6 @@ package lang.object;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class DBConnService {
 	private Connection conn = null;

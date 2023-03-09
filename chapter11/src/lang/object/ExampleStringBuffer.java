@@ -35,6 +35,7 @@ public class ExampleStringBuffer {
 		DBConnService dbConnService = new DBConnService();
 //		dbConnService.select(sqlStr);
 		dbConnService.selectAll();
+		
 	}
 
 }
