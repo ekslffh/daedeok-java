@@ -10,9 +10,9 @@ public class LibMemberDTO {
 	private String mem_id;
 	private String mem_name;
 	
-	LibMemberDTO() {}
+	public LibMemberDTO() {}
 	
-	LibMemberDTO(int mem_num, String mem_id, String mem_name) {
+	public LibMemberDTO(int mem_num, String mem_id, String mem_name) {
 		this.mem_num = mem_num;
 		this.mem_id = mem_id;
 		this.mem_name = mem_name;

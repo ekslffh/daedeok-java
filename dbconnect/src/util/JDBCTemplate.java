@@ -2,7 +2,9 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class JDBCTemplate {
 	// 싱글톤 패턴으로 연결객체 생성
@@ -13,11 +15,11 @@ public class JDBCTemplate {
 		return instance;
 	}
 	
-	private final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-	private final String USER = "basicjava";
-	private final String PASSWORD = "java";
+	private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	private static final String USER = "basicjava";
+	private static final String PASSWORD = "java";
 	
-	Connection conn = null;
+	private static Connection conn = null;
 	
 	public static Connection getConnection() {
 		try {
@@ -26,6 +28,47 @@ public class JDBCTemplate {
 		} catch (ClassNotFoundException e) {
 			System.out.println("JDBC 드라이버 로드 오류");
 			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+	
+	public void close(Statement stmt) {
+		try {
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void close(ResultSet rs) {
+		try {
+			rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void close(Connection conn) {
+		try {
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void commit(Connection conn) {
+		try {
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void rollback(Connection conn) {
+		try {
+			conn.rollback();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
