@@ -23,10 +23,14 @@ public class LibMemberDAO {
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT MEM_NUM, MEM_ID, MEM_NAME FROM LIB_MEMBER ";
-
+//		stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 		try {
-			stmt = conn.createStatement();
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			rs = stmt.executeQuery(sql);
+			rs.last();      
+
+			System.out.println("row : " + rs.getRow());
+	        rs.beforeFirst();
 
 			while (rs.next()) {
 				LibMemberDTO dto = new LibMemberDTO();

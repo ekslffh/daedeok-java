@@ -43,7 +43,6 @@ public class LibMemberController {
 				selectOne();
 				break;
 			case 3:
-				System.out.println("추   가");
 				insert();
 				break;
 			case 4:
